@@ -157,26 +157,29 @@ class _stfState extends State<stf> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        width: 280,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                        ),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Icon(Icons.search),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text("search")
-                          ],
+                      Expanded(
+                        child: Container(
+                          width: 280,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white,
+                          ),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Icon(Icons.search),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text("search")
+                            ],
+                          ),
                         ),
                       ),
+                      SizedBox(width:10 ,),
                       CircleAvatar(
                         radius: 30,
                         backgroundColor: Colors.white,
@@ -192,8 +195,8 @@ class _stfState extends State<stf> {
           // Positioned container with GridView
           Positioned(
             top: 290,
-            left: 3,
-            right: 3,
+            left: 1,
+            right: 1,
             child: Container(
               width: double.infinity,
               height: 500,
@@ -215,14 +218,16 @@ class _stfState extends State<stf> {
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
-                        Container(
-                          width: 60,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            image: DecorationImage(
-                              image: NetworkImage(data[index]['image']!),
-                              fit: BoxFit.cover,
+                        Expanded(
+                          child: Container(
+                            // width: 150,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                image: NetworkImage(data[index]['image']!),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
